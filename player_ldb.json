@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "player_img": "img/ldb_player_img/player_0_img.png",
+        "player_name": "zzz077",
+        "rating": 777
+    },
+    {
+        "id": 2,
+        "player_img": "img/ldb_player_img/player_1_img.png",
+        "player_name": "S1mple",
+        "rating": 460
+    },
+    {
+        "id": 3,
+        "player_img": "img/ldb_player_img/player_2_img.png",
+        "player_name": "monesy",
+        "rating": 455
+    },
+    {
+        "id": 4,
+        "player_img": "img/ldb_player_img/player_3_img.png",
+        "player_name": "kennys",
+        "rating": 366
+    },
+    {
+        "id": 5,
+        "player_img": "img/ldb_player_img/player_4_img.png",
+        "player_name": "zywoo",
+        "rating": 333
+    },
+    {
+        "id": 6,
+        "player_img": "img/ldb_player_img/player_5_img.png",
+        "player_name": "Karigan",
+        "rating": 422
+    },
+    {
+        "id": 7,
+        "player_img": "img/ldb_player_img/player_6_img.png",
+        "player_name": "JKS",
+        "rating": 389
+    },
+    {
+        "id": 8,
+        "player_img": "img/ldb_player_img/player_7_img.png",
+        "player_name": "NIKO",
+        "rating": 458
+    },
+    {
+        "id": 9,
+        "player_img": "img/ldb_player_img/player_8_img.png",
+        "player_name": "Apex",
+        "rating": 311
+    },
+    {
+        "id": 10,
+        "player_img": "img/ldb_player_img/player_9_img.png",
+        "player_name": "lekro",
+        "rating": 367
+    },
+    {
+        "id": 11,
+        "player_img": "img/ldb_player_img/player_10_img.png",
+        "player_name": "Dosia",
+        "rating": 365
+    },
+    {
+        "id": 12,
+        "player_img": "img/ldb_player_img/player_11_img.png",
+        "player_name": "cadian",
+        "rating": 401
+    },
+    {
+        "id": 13,
+        "player_img": "img/ldb_player_img/player_12_img.png",
+        "player_name": "K1to",
+        "rating": 307
+    },
+    {
+        "id": 14,
+        "player_img": "img/ldb_player_img/player_13_img.png",
+        "player_name": "b1t",
+        "rating": 407
+    },
+    {
+        "id": 15,
+        "player_img": "img/ldb_player_img/player_14_img.png",
+        "player_name": "Guardian",
+        "rating": 419
+    },
+    {
+        "id": 16,
+        "player_img": "img/ldb_player_img/player_15_img.png",
+        "player_name": "Brollen",
+        "rating": 321
+    },
+    {
+        "id": 17,
+        "player_img": "img/ldb_player_img/player_16_img.png",
+        "player_name": "NBK",
+        "rating": 398
+    }
+]
