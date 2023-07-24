@@ -1,0 +1,130 @@
+[
+    {
+        "id": 1,
+        "ldb_team_img": "img/data_team_img/astralis_logo.png",
+        "ldb_team_name": "Astralis",
+        "ldb_team_win": 2,
+        "ldb_team_loose": 3,
+        "ldb_team_points": 20
+    },
+    {
+        "id": 2,
+        "ldb_team_img": "img/data_team_img/big_logo.png",
+        "ldb_team_name": "BIG",
+        "ldb_team_win": 1,
+        "ldb_team_loose": 4,
+        "ldb_team_points": 10
+    },
+    {
+        "id": 3,
+        "ldb_team_img": "img/data_team_img/c9_logo.png",
+        "ldb_team_name": "Cloud 9",
+        "ldb_team_win": 2,
+        "ldb_team_loose": 2,
+        "ldb_team_points": 21
+    },
+    {
+        "id": 4,
+        "ldb_team_img": "img/data_team_img/complexity_logo.png",
+        "ldb_team_name": "Complexity",
+        "ldb_team_win": 1,
+        "ldb_team_loose": 3,
+        "ldb_team_points": 12
+    },
+    {
+        "id": 5,
+        "ldb_team_img": "img/data_team_img/ence_logo.png",
+        "ldb_team_name": "ENCE",
+        "ldb_team_win": 3,
+        "ldb_team_loose": 2,
+        "ldb_team_points": 24
+    },
+    {
+        "id": 6,
+        "ldb_team_img": "img/data_team_img/faze_logo.png",
+        "ldb_team_name": "Faze clan",
+        "ldb_team_win": 4,
+        "ldb_team_loose": 1,
+        "ldb_team_points": 26
+    },
+    {
+        "id": 7,
+        "ldb_team_img": "img/data_team_img/fnatic_logo.png",
+        "ldb_team_name": "Fnatic",
+        "ldb_team_win": 2,
+        "ldb_team_loose": 3,
+        "ldb_team_points": 20
+    },
+    {
+        "id": 8,
+        "ldb_team_img": "img/data_team_img/furia_logo.png",
+        "ldb_team_name": "Furia",
+        "ldb_team_win": 1,
+        "ldb_team_loose": 4,
+        "ldb_team_points": 9
+    },
+    {
+        "id": 9,
+        "ldb_team_img": "img/data_team_img/G2_logo.png",
+        "ldb_team_name": "G2 esport",
+        "ldb_team_win": 5,
+        "ldb_team_loose": 1,
+        "ldb_team_points": 28
+    },
+    {
+        "id": 10,
+        "ldb_team_img": "img/data_team_img/gambit_logo.png",
+        "ldb_team_name": "Gambit",
+        "ldb_team_win": 3,
+        "ldb_team_loose": 2,
+        "ldb_team_points": 24
+    },
+    {
+        "id": 11,
+        "ldb_team_img": "img/data_team_img/heroic_logo.png",
+        "ldb_team_name": "Heroic",
+        "ldb_team_win": 3,
+        "ldb_team_loose": 1,
+        "ldb_team_points": 26
+    },
+    {
+        "id": 12,
+        "ldb_team_img": "img/data_team_img/liquid_logo.png",
+        "ldb_team_name": "Team Liquid",
+        "ldb_team_win": 3,
+        "ldb_team_loose": 1,
+        "ldb_team_points": 22
+    },
+    {
+        "id": 13,
+        "ldb_team_img": "img/data_team_img/navi_logo.png",
+        "ldb_team_name": "NAVI",
+        "ldb_team_win": 4,
+        "ldb_team_loose": 2,
+        "ldb_team_points": 24
+    },
+    {
+        "id": 14,
+        "ldb_team_img": "img/data_team_img/nip_logo.png",
+        "ldb_team_name": "NIP",
+        "ldb_team_win": 1,
+        "ldb_team_loose": 3,
+        "ldb_team_points": 14
+    },
+    {
+        "id": 15,
+        "ldb_team_img": "img/data_team_img/og_logo.png",
+        "ldb_team_name": "OG Esport",
+        "ldb_team_win": 1,
+        "ldb_team_loose": 3,
+        "ldb_team_points": 10
+    },
+    {
+        "id": 16,
+        "ldb_team_img": "img/data_team_img/vitality_logo.png",
+        "ldb_team_name": "Vitality",
+        "ldb_team_win": 4,
+        "ldb_team_loose": 2,
+        "ldb_team_points": 20
+    }
+]

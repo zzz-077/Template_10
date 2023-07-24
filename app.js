@@ -12,6 +12,13 @@ const user_account_box = document.querySelector(".user_account_box");
 const user_resposive_account_box = document.querySelector(
     ".user_resposive_account_box"
 );
+const fnt_team_name_box = document.querySelectorAll(".fnt_team_name_box");
+const fantasy_team_box_content_UL = document.querySelectorAll(
+    ".fantasy_team_box_content ul"
+);
+const fantasy_team_box_content = document.querySelectorAll(
+    ".fantasy_team_box_content "
+);
 
 //==================Functions=========================
 function windowScroll() {
@@ -52,93 +59,6 @@ if (!register_box.classList.contains("active")) {
     user_resposive_account_box.classList.remove("active");
 }
 
-fetch("data_team.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (products) {
-        let out = "";
-        for (let product of products) {
-            out += `
-        <li>
-        <div class="first_team_img_box">
-            <img
-                data-value="2"
-                src="${product.team_img}"
-                alt=""
-            />
-            <h2>${product.team_name}</h2>
-        </div>
-        <div class="match_date_box">
-            <h3>${product.time}</h3>
-            <p>${product.date}</p>
-            <strong>${product.map}</strong>
-        </div>
-        <div class="second_team_img_box">
-            <h2>${product.opon_name}</h2>
-            <img
-                src="${product.opon_team_img}"
-                alt=""
-            />
-        </div>
-    </li>
-        `;
-        }
-        document.querySelector(".match_content ul").innerHTML = out;
-    });
-
-fetch("player_ldb.json")
-    .then(function (resp) {
-        return resp.json();
-    })
-    .then(function (player) {
-        let maxPts = player[0].rating;
-        for (let i = 0; i < player.length - 1; i++) {
-            for (let j = 0; j < player.length - i - 1; j++) {
-                if (player[j].rating < player[j + 1].rating) {
-                    const swap = player[j].rating;
-                    player[j].rating = player[j + 1].rating;
-                    player[j + 1].rating = swap;
-                }
-                if (maxPts <= player[j].rating) {
-                    maxPts = player[j].rating;
-                }
-            }
-        }
-        let print1 = "";
-        let print2 = "";
-
-        for (let i = 0; i < player.length; i++) {
-            const plr = player[i];
-            let playerbox = `
-            <div class="best_player_box">
-            <div class="best_plr_left_box">
-                <div class="plr_rating">
-                    <strong>${plr.id}</strong>
-                </div>
-                <div class="plr_name">
-                    <img
-                        src="${plr.player_img}"
-                        alt="#1"
-                    />
-                    <h3>${plr.player_name}</h3>
-                </div>
-            </div>
-            <div class="plr_pts">
-                <strong>${plr.rating} PTS</strong>
-            </div>
-            </div>`;
-
-            if (plr.id <= 5) {
-                print1 += playerbox;
-            } else {
-                print2 += playerbox;
-            }
-        }
-        document.querySelector(".best_player_top10_box").innerHTML = print1;
-        document.querySelector(".best_player_aftr10_box").innerHTML = print2;
-    });
-
 switch (page) {
     case "index_BD":
         navbar_btn.addEventListener("click", navbarClick);
@@ -146,6 +66,41 @@ switch (page) {
         reg_btn.addEventListener("click", RegPopupClick);
         login_btn.addEventListener("click", LoginPopupClick);
         dnt_have_acc_btn_a.addEventListener("click", regRedirectClick);
+
+        fetch("data_team.json")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (products) {
+                let out = "";
+                for (let product of products) {
+                    out += `
+            <li>
+            <div class="first_team_img_box">
+                <img
+                    data-value="2"
+                    src="${product.team_img}"
+                    alt=""
+                />
+                <h2>${product.team_name}</h2>
+            </div>
+            <div class="match_date_box">
+                <h3>${product.time}</h3>
+                <p>${product.date}</p>
+                <strong>${product.map}</strong>
+            </div>
+            <div class="second_team_img_box">
+                <h2>${product.opon_name}</h2>
+                <img
+                    src="${product.opon_team_img}"
+                    alt=""
+                />
+            </div>
+        </li>
+            `;
+                }
+                document.querySelector(".match_content ul").innerHTML = out;
+            });
 
         break;
 
@@ -155,6 +110,122 @@ switch (page) {
         reg_btn.addEventListener("click", RegPopupClick);
         login_btn.addEventListener("click", LoginPopupClick);
         dnt_have_acc_btn_a.addEventListener("click", regRedirectClick);
+
+        fetch("player_ldb.json")
+            .then(function (resp) {
+                return resp.json();
+            })
+            .then(function (player) {
+                let maxPts = player[0].rating;
+                for (let i = 0; i < player.length - 1; i++) {
+                    for (let j = 0; j < player.length - i - 1; j++) {
+                        if (player[j].rating < player[j + 1].rating) {
+                            const swap = player[j].rating;
+                            player[j].rating = player[j + 1].rating;
+                            player[j + 1].rating = swap;
+                        }
+                        if (maxPts <= player[j].rating) {
+                            maxPts = player[j].rating;
+                        }
+                    }
+                }
+                let print1 = "";
+                let print2 = "";
+
+                for (let i = 0; i < player.length; i++) {
+                    const plr = player[i];
+                    let playerbox = `
+                <div class="best_player_box">
+                <div class="best_plr_left_box">
+                    <div class="plr_rating">
+                        <strong>${plr.id}</strong>
+                    </div>
+                    <div class="plr_name">
+                        <img
+                            src="${plr.player_img}"
+                            alt=""
+                        />
+                        <h3>${plr.player_name}</h3>
+                    </div>
+                </div>
+                <div class="plr_pts">
+                    <strong>${plr.rating} C</strong>
+                </div>
+                </div>`;
+
+                    if (plr.id <= 5) {
+                        print1 += playerbox;
+                    } else {
+                        print2 += playerbox;
+                    }
+                }
+                document.querySelector(".best_player_top10_box").innerHTML =
+                    print1;
+                document.querySelector(".best_player_aftr10_box").innerHTML =
+                    print2;
+            });
+
+        fetch("team_ldb.json")
+            .then(function (resp1) {
+                return resp1.json();
+            })
+            .then(function (team) {
+                for (let i = 0; i < team.length - 1; i++) {
+                    for (let j = 0; j < team.length - i - 1; j++) {
+                        if (
+                            team[j].ldb_team_points <
+                            team[j + 1].ldb_team_points
+                        ) {
+                            const swap = team[j];
+                            team[j] = team[j + 1];
+                            team[j + 1] = swap;
+                        }
+                    }
+                }
+
+                let prt3 = "";
+                for (let i = 0; i < team.length; i++) {
+                    const tm = team[i];
+                    prt3 += `
+                            <div class="best_player_box">
+                            <div class="best_plr_left_box">
+                                <div class="plr_rating">
+                                    <strong>${i + 1}</strong>
+                                </div>
+                                <div class="plr_name">
+                                    <img
+                                        src="${tm.ldb_team_img}"
+                                        alt=""
+                                    />
+                                    <h3>${tm.ldb_team_name}</h3>
+                                </div>
+                            </div>
+                            <div class="team_static">
+                                <strong>${tm.ldb_team_win}</strong>
+                                <strong>${tm.ldb_team_loose}</strong>
+                                <strong>${tm.ldb_team_points}</strong>
+                            </div>
+                            </div>
+                        `;
+                }
+                document.querySelector(".team_static_box").innerHTML = prt3;
+            });
+
+        break;
+
+    case "fantasy_BD":
+        navbar_btn.addEventListener("click", navbarClick);
+        window.addEventListener("scroll", windowScroll);
+        reg_btn.addEventListener("click", RegPopupClick);
+        login_btn.addEventListener("click", LoginPopupClick);
+        dnt_have_acc_btn_a.addEventListener("click", regRedirectClick);
+
+        for (let i = 0; i < fantasy_team_box_content.length; i++) {
+            fnt_team_name_box[i].addEventListener("click", () => {
+                fantasy_team_box_content_UL[i].classList.toggle("active");
+                fnt_team_name_box[i].classList.toggle("active");
+            });
+        }
 
         break;
 }

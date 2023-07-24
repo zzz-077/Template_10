@@ -1043,6 +1043,7 @@ textarea::placeholder {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    align-items: center;
 }
 .best_player_top10_box,
 .best_player_aftr10_box {
@@ -1054,6 +1055,95 @@ textarea::placeholder {
     width: 45%;
     gap: 1.25rem;
     height: 314px;
+}
+.team_ldb_sect {
+    border-top: 1px solid #14141c;
+    padding-top: 80px;
+}
+.best_team_box {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background-color: var(--nav_bg-color);
+    border-radius: 0.2rem;
+    width: 100%;
+    gap: 1.25rem;
+    height: 530px;
+}
+.best_team_box ul,
+.best_player_top10_box ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background-color: var(--tx_main-color);
+    padding: 0.25rem 0;
+    position: relative;
+}
+
+.best_team_box ul div,
+.best_player_top10_box ul div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+.best_team_box ul div:nth-child(1),
+.best_player_top10_box ul div:nth-child(1) {
+    border-right: 1px solid #001c3082;
+    padding: 0 8px;
+}
+
+.best_team_box ul div:nth-child(2),
+.best_player_top10_box ul div:nth-child(2) {
+    border-left: 1px solid #001c3082;
+    padding: 0 0.5rem;
+    width: 120px;
+    margin-right: 1rem;
+}
+.best_team_box ul div:nth-child(2) li,
+.best_player_top10_box ul div:nth-child(2) li {
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+.best_team_box ul div:nth-child(2) li span,
+.best_player_top10_box ul div:nth-child(2) li span {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    color: rgba(255, 255, 255, 0.658);
+    padding: 8px 10px;
+    font-size: 0.875rem;
+    font-weight: 300;
+    border-radius: 0.2rem;
+    background-color: #14141c;
+}
+
+.best_team_box ul div:nth-child(2) li:hover span,
+.best_player_top10_box ul div:nth-child(2) li:hover span {
+    opacity: 1;
+    visibility: visible;
+}
+
+.best_team_box ul div li,
+.best_player_top10_box ul div li {
+    display: flex;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #181823;
+}
+.best_team_box ul::after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1rem;
+    height: 100%;
+    background-color: #181823;
 }
 .best_player_aftr10_box {
     overflow-y: scroll;
@@ -1113,13 +1203,48 @@ textarea::placeholder {
 }
 .plr_pts {
     color: rgb(255, 105, 50);
-
     padding: 0 0.5rem;
     border-left: 1px solid #001c3082;
-    width: 85px;
+    width: 65px;
     text-align: right;
     font-weight: 100;
 }
+
+.team_static {
+    display: flex;
+    justify-content: space-between;
+    border-left: 1px solid #001c3082;
+    align-items: center;
+    padding: 0 0.5rem;
+    width: 120px;
+}
+.team_static strong {
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 105, 50);
+}
+.best_team_box .team_static_box:nth-child(1) {
+    background-color: red;
+}
+.team_static_box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #232337;
+        border-radius: 3px;
+    }
+}
+
 .plr_pts strong {
     font-weight: 800;
 }
@@ -1143,6 +1268,122 @@ textarea::placeholder {
 
 .best_player_top10_box .best_player_box:nth-child(1) .plr_name {
     margin-left: 64px;
+}
+/*====================================================*/
+/*=================fantasy.html====================*/
+/*====================================================*/
+
+/*=================fantasy-section====================*/
+.fantasy_sec {
+    padding: 0 4rem;
+    margin-top: 120px;
+}
+.fantasy_content {
+    margin: 0 auto;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.fantasy_left_column {
+    width: 25%;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    background-color: var(--nav_bg-color);
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #232337;
+        border-radius: 3px;
+    }
+}
+.fantasy_team_box {
+    gap: 0.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.fantasy_team_box_content {
+    background-color: #14141c;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+}
+.fnt_team_name_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #19a7ce;
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+}
+.fnt_team_name_box div {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.fnt_team_name_box div img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.fnt_team_name_box.active i {
+    transform: rotate(90deg);
+}
+.fantasy_team_box_content ul {
+    font-size: 0.75rem;
+    text-align: left;
+    margin-top: 0.5rem;
+    list-style: none;
+    display: none;
+    gap: 0.25rem;
+}
+.fantasy_team_box_content ul.active {
+    border-top: 1px solid #14141c;
+    display: flex;
+    flex-direction: column;
+}
+.fantasy_team_box_content ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 8px;
+    border-radius: 0.2rem;
+    background-color: #242432;
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    user-select: none;
+}
+.fantasy_team_box_content ul li div {
+    display: flex;
+}
+.fantasy_team_box_content ul li div p {
+    padding-right: 8px;
+    border-right: 1px solid #14519a;
+}
+.fantasy_team_box_content ul li div strong {
+    padding-left: 8px;
+}
+
+.fantasy_right_column {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    background-color: var(--nav_bg-color);
 }
 
 /*=================mediaquery-section====================*/
@@ -1449,12 +1690,23 @@ textarea::placeholder {
         font-size: 1rem;
     }
     .plr_name h3,
-    .plr_pts strong {
+    .plr_pts strong,
+    .team_static strong,
+    .best_team_box ul div li {
         font-size: 0.875rem;
     }
     .plr_pts {
         padding-left: 2px;
-        width: 75px;
+    }
+    .team_static,
+    .best_team_box ul div:nth-child(2) {
+        padding-left: 2px;
+        width: 85px;
+        justify-content: space-evenly;
+    }
+    .best_team_box ul div:nth-child(2) {
+        justify-content: space-evenly;
+        gap: 0;
     }
     .plr_name img {
         width: 32px;
@@ -1463,6 +1715,12 @@ textarea::placeholder {
     .plr_rating strong {
         width: 100%;
         text-align: center;
+    }
+    .plr_name {
+        gap: 0.25rem;
+    }
+    .team_static {
+        padding: 0;
     }
 }
 @media (max-width: 420px) {
@@ -1540,6 +1798,34 @@ textarea::placeholder {
     .ytb_banner_box .ytb_banner_desc div {
         width: 250px;
     }
+    .team_static,
+    .best_team_box ul div:nth-child(2) {
+        justify-content: center;
+        width: 65px;
+    }
+    .best_team_box ul div li {
+        font-size: 0.875rem;
+    }
+    .plr_name img {
+        width: 20px;
+        height: 20px;
+    }
+    .plr_name h3 {
+        font-size: 0.75rem;
+    }
+    .plr_rating {
+        font-size: 0.875rem;
+    }
+    .best_player_top10_box .best_player_box:nth-child(1) .plr_name img {
+        width: 32px;
+        height: 32px;
+    }
+    .best_player_top10_box .best_player_box:nth-child(1) .plr_rating {
+        width: 48px;
+    }
+    .plr_name h3 {
+        text-align: left;
+    }
 }
 @media (max-width: 300px) {
     .user_resposive_account_box
@@ -1547,6 +1833,22 @@ textarea::placeholder {
         .profile_left_box
         .credit_box
         p:nth-child(1) {
+        display: none;
+    }
+    .plr_name img {
+        display: none;
+    }
+    .plr_name h3 {
+        text-align: left;
+    }
+    .plr_pts {
+        width: 55px;
+    }
+    .best_team_box ul div:nth-child(1) {
+        margin-left: 0;
+        border: 0;
+    }
+    .best_team_box ul div:nth-child(1) li:nth-child(1) {
         display: none;
     }
 }
