@@ -12,13 +12,6 @@ const user_account_box = document.querySelector(".user_account_box");
 const user_resposive_account_box = document.querySelector(
     ".user_resposive_account_box"
 );
-const fnt_team_name_box = document.querySelectorAll(".fnt_team_name_box");
-const fantasy_team_box_content_UL = document.querySelectorAll(
-    ".fantasy_team_box_content ul"
-);
-const fantasy_team_box_content = document.querySelectorAll(
-    ".fantasy_team_box_content "
-);
 
 //==================Functions=========================
 function windowScroll() {
@@ -67,7 +60,7 @@ switch (page) {
         login_btn.addEventListener("click", LoginPopupClick);
         dnt_have_acc_btn_a.addEventListener("click", regRedirectClick);
 
-        fetch("data_team.json")
+        fetch("json_folder/data_team.json")
             .then(function (response) {
                 return response.json();
             })
@@ -111,7 +104,7 @@ switch (page) {
         login_btn.addEventListener("click", LoginPopupClick);
         dnt_have_acc_btn_a.addEventListener("click", regRedirectClick);
 
-        fetch("player_ldb.json")
+        fetch("json_folder/player_ldb.json")
             .then(function (resp) {
                 return resp.json();
             })
@@ -165,7 +158,7 @@ switch (page) {
                     print2;
             });
 
-        fetch("team_ldb.json")
+        fetch("json_folder/team_ldb.json")
             .then(function (resp1) {
                 return resp1.json();
             })
@@ -220,12 +213,84 @@ switch (page) {
         login_btn.addEventListener("click", LoginPopupClick);
         dnt_have_acc_btn_a.addEventListener("click", regRedirectClick);
 
-        for (let i = 0; i < fantasy_team_box_content.length; i++) {
-            fnt_team_name_box[i].addEventListener("click", () => {
-                fantasy_team_box_content_UL[i].classList.toggle("active");
-                fnt_team_name_box[i].classList.toggle("active");
+        fetch("json_folder/fantasy_team_data.json")
+            .then((resp) => {
+                return resp.json();
+            })
+            .then((fant) => {
+                let print = "";
+                for (let i = 0; i < fant.length; i++) {
+                    let plr = fant[i];
+                    print += `
+                            <div class="fantasy_team_box_content">
+                                <div class="fnt_team_name_box">
+                                    <div>
+                                        <img
+                                            src="${plr.team_img}"
+                                            alt=""
+                                        />
+                                        <h3>${plr.team_name}</h3>
+                                    </div>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <ul>
+                                    <li>
+                                    ${plr.team_player1}
+                                        <div>
+                                            <p>${plr.player_POS_EF}</p>
+                                            <strong>${plr.EF_price}</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    ${plr.team_player2}
+                                        <div>
+                                            <p>${plr.player_POS_IGL}</p>
+                                            <strong>${plr.IGL_price}</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    ${plr.team_player3}
+                                        <div>
+                                            <p>${plr.player_POS_SUP}</p>
+                                            <strong>${plr.SUP_price}</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    ${plr.team_player4}
+                                        <div>
+                                            <p>${plr.player_POS_AWP}</p>
+                                            <strong>${plr.AWP_price}</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    ${plr.team_player5}
+                                        <div>
+                                            <p>${plr.player_POS_LUR}</p>
+                                            <strong>${plr.LUR_price}</strong>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            `;
+                    document.querySelector(".fantasy_team_box").innerHTML =
+                        print;
+                }
+                const fnt_team_name_box =
+                    document.querySelectorAll(".fnt_team_name_box");
+                const fantasy_team_box_content_UL = document.querySelectorAll(
+                    ".fantasy_team_box_content ul"
+                );
+                const fantasy_team_box_content = document.querySelectorAll(
+                    ".fantasy_team_box_content "
+                );
+                for (let i = 0; i < fant.length; i++) {
+                    fnt_team_name_box[i].addEventListener("click", () => {
+                        fantasy_team_box_content_UL[i].classList.toggle(
+                            "active"
+                        );
+                        fnt_team_name_box[i].classList.toggle("active");
+                    });
+                }
             });
-        }
-
         break;
 }

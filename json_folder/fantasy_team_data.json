@@ -1,0 +1,191 @@
+[
+    {
+        "team_img": "img/data_team_img/G2_logo.png",
+        "team_name": "G2",
+        "team_player1": "NiKo",
+        "team_player2": "HooXi",
+        "team_player3": "huNter",
+        "team_player4": "mONESY",
+        "team_player5": "jks",
+
+        "player_POS_EF": "EF",
+        "player_POS_IGL": "IGL",
+        "player_POS_SUP": "SUP",
+        "player_POS_AWP": "AWP",
+        "player_POS_LUR": "LUR",
+
+        "EF_price": "8c",
+        "IGL_price": "5c",
+        "SUP_price": "7c",
+        "AWP_price": "8c",
+        "LUR_price": "7c"
+    },
+    {
+        "team_img": "img/data_team_img/navi_logo.png",
+        "team_name": "NAVI",
+        "team_player1": "b1t",
+        "team_player2": "Aleksib",
+        "team_player3": "jL",
+        "team_player4": "s1mple",
+        "team_player5": "iM",
+
+        "player_POS_EF": "EF",
+        "player_POS_IGL": "IGL",
+        "player_POS_SUP": "SUP",
+        "player_POS_AWP": "AWP",
+        "player_POS_LUR": "LUR",
+
+        "EF_price": "8c",
+        "IGL_price": "5c",
+        "SUP_price": "7c",
+        "AWP_price": "8c",
+        "LUR_price": "7c"
+    },
+    {
+        "team_img": "img/data_team_img/heroic_logo.png",
+        "team_name": "Heroic",
+        "team_player1": "sjuush",
+        "team_player2": "stavn",
+        "team_player3": "TeSeS",
+        "team_player4": "cadian",
+        "team_player5": "jabbi",
+
+        "player_POS_EF": "EF",
+        "player_POS_IGL": "IGL",
+        "player_POS_SUP": "SUP",
+        "player_POS_AWP": "AWP",
+        "player_POS_LUR": "LUR",
+
+        "EF_price": "6c",
+        "IGL_price": "8c",
+        "SUP_price": "7c",
+        "AWP_price": "8c",
+        "LUR_price": "7c"
+    },
+    {
+        "team_img": "img/data_team_img/vitality_logo.png",
+        "team_name": "Vitality",
+        "team_player1": "Magisk",
+        "team_player2": "apEX",
+        "team_player3": "flameZ",
+        "team_player4": "ZywOo",
+        "team_player5": "Spinx",
+
+        "player_POS_EF": "EF",
+        "player_POS_IGL": "IGL",
+        "player_POS_SUP": "SUP",
+        "player_POS_AWP": "AWP",
+        "player_POS_LUR": "LUR",
+
+        "EF_price": "8c",
+        "IGL_price": "5c",
+        "SUP_price": "7c",
+        "AWP_price": "8c",
+        "LUR_price": "7c"
+    },
+    {
+        "team_img": "img/data_team_img/faze_logo.png",
+        "team_name": "Faze",
+        "team_player1": "rain",
+        "team_player2": "karrigan",
+        "team_player3": "ropz",
+        "team_player4": "broky",
+        "team_player5": "Twistzz",
+
+        "player_POS_EF": "EF",
+        "player_POS_IGL": "IGL",
+        "player_POS_SUP": "SUP",
+        "player_POS_AWP": "AWP",
+        "player_POS_LUR": "LUR",
+
+        "EF_price": "8c",
+        "IGL_price": "5c",
+        "SUP_price": "7c",
+        "AWP_price": "8c",
+        "LUR_price": "7c"
+    },
+    {
+        "team_img": "img/data_team_img/ence_logo.png",
+        "team_name": "ENCE",
+        "team_player1": "snappi",
+        "team_player2": "Maden",
+        "team_player3": "NertZ",
+        "team_player4": "dycha",
+        "team_player5": "SunPayus",
+
+        "player_POS_EF": "EF",
+        "player_POS_IGL": "IGL",
+        "player_POS_SUP": "SUP",
+        "player_POS_AWP": "AWP",
+        "player_POS_LUR": "LUR",
+
+        "EF_price": "8c",
+        "IGL_price": "5c",
+        "SUP_price": "7c",
+        "AWP_price": "8c",
+        "LUR_price": "7c"
+    },
+    {
+        "team_img": "img/data_team_img/liquid_logo.png",
+        "team_name": "Liquid",
+        "team_player1": "Rainwaker",
+        "team_player2": "YEKINDAR",
+        "team_player3": "Patsi",
+        "team_player4": "oSee",
+        "team_player5": "NAF",
+
+        "player_POS_EF": "EF",
+        "player_POS_IGL": "IGL",
+        "player_POS_SUP": "SUP",
+        "player_POS_AWP": "AWP",
+        "player_POS_LUR": "LUR",
+
+        "EF_price": "8c",
+        "IGL_price": "5c",
+        "SUP_price": "7c",
+        "AWP_price": "8c",
+        "LUR_price": "7c"
+    },
+    {
+        "team_img": "img/data_team_img/nip_logo.png",
+        "team_name": "NIP",
+        "team_player1": "Brollan",
+        "team_player2": "hampus",
+        "team_player3": "kOnfig",
+        "team_player4": "headtr1ck",
+        "team_player5": "REZ",
+
+        "player_POS_EF": "EF",
+        "player_POS_IGL": "IGL",
+        "player_POS_SUP": "SUP",
+        "player_POS_AWP": "AWP",
+        "player_POS_LUR": "LUR",
+
+        "EF_price": "8c",
+        "IGL_price": "5c",
+        "SUP_price": "7c",
+        "AWP_price": "8c",
+        "LUR_price": "7c"
+    },
+    {
+        "team_img": "img/data_team_img/astralis_logo.png",
+        "team_name": "Astralis",
+        "team_player1": "bORUP",
+        "team_player2": "blameF",
+        "team_player3": "Staehr",
+        "team_player4": "device",
+        "team_player5": "Buzz",
+
+        "player_POS_EF": "EF",
+        "player_POS_IGL": "IGL",
+        "player_POS_SUP": "SUP",
+        "player_POS_AWP": "AWP",
+        "player_POS_LUR": "LUR",
+
+        "EF_price": "8c",
+        "IGL_price": "5c",
+        "SUP_price": "7c",
+        "AWP_price": "8c",
+        "LUR_price": "7c"
+    }
+]
