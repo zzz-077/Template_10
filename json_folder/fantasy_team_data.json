@@ -8,6 +8,12 @@
         "team_player4": "mONESY",
         "team_player5": "jks",
 
+        "player1_img": "img/fantasy_player_img/g2_niko.webp",
+        "player2_img": "img/fantasy_player_img/g2_hooxi.webp",
+        "player3_img": "img/fantasy_player_img/g2_hunter.webp",
+        "player4_img": "img/fantasy_player_img/g2_monesy.webp",
+        "player5_img": "img/fantasy_player_img/g2_jks.webp",
+
         "player_POS_EF": "EF",
         "player_POS_IGL": "IGL",
         "player_POS_SUP": "SUP",
@@ -28,6 +34,12 @@
         "team_player3": "jL",
         "team_player4": "s1mple",
         "team_player5": "iM",
+
+        "player1_img": "img/fantasy_player_img/navi_bit.webp",
+        "player2_img": "img/fantasy_player_img/navi_aleksib.webp",
+        "player3_img": "img/fantasy_player_img/navi_jl.webp",
+        "player4_img": "img/fantasy_player_img/navi_s1mple.webp",
+        "player5_img": "img/fantasy_player_img/navi_im.webp",
 
         "player_POS_EF": "EF",
         "player_POS_IGL": "IGL",
@@ -50,6 +62,12 @@
         "team_player4": "cadian",
         "team_player5": "jabbi",
 
+        "player1_img": "img/fantasy_player_img/heroic_sjuush.webp",
+        "player2_img": "img/fantasy_player_img/heroic_stavn.webp",
+        "player3_img": "img/fantasy_player_img/heroic_teses.webp",
+        "player4_img": "img/fantasy_player_img/heroic_cadian.webp",
+        "player5_img": "img/fantasy_player_img/heroic_jabbi.webp",
+
         "player_POS_EF": "EF",
         "player_POS_IGL": "IGL",
         "player_POS_SUP": "SUP",
@@ -70,6 +88,12 @@
         "team_player3": "flameZ",
         "team_player4": "ZywOo",
         "team_player5": "Spinx",
+
+        "player1_img": "img/fantasy_player_img/vitality_magisk.webp",
+        "player2_img": "img/fantasy_player_img/vitality_apex.webp",
+        "player3_img": "img/fantasy_player_img/vitality_flamez.webp",
+        "player4_img": "img/fantasy_player_img/vitality_zywoo.webp",
+        "player5_img": "img/fantasy_player_img/vitality_spinx.webp",
 
         "player_POS_EF": "EF",
         "player_POS_IGL": "IGL",
@@ -92,6 +116,12 @@
         "team_player4": "broky",
         "team_player5": "Twistzz",
 
+        "player1_img": "img/fantasy_player_img/faze_rain.webp",
+        "player2_img": "img/fantasy_player_img/faze_karrigan.webp",
+        "player3_img": "img/fantasy_player_img/faze_ropz.webp",
+        "player4_img": "img/fantasy_player_img/faze_broky.webp",
+        "player5_img": "img/fantasy_player_img/faze_twistzz.webp",
+
         "player_POS_EF": "EF",
         "player_POS_IGL": "IGL",
         "player_POS_SUP": "SUP",
@@ -112,6 +142,12 @@
         "team_player3": "NertZ",
         "team_player4": "dycha",
         "team_player5": "SunPayus",
+
+        "player1_img": "img/fantasy_player_img/ence_snappi.webp",
+        "player2_img": "img/fantasy_player_img/ence_maden.webp",
+        "player3_img": "img/fantasy_player_img/ence_nertz.webp",
+        "player4_img": "img/fantasy_player_img/ence_dycha.webp",
+        "player5_img": "img/fantasy_player_img/ence_sunpayus.webp",
 
         "player_POS_EF": "EF",
         "player_POS_IGL": "IGL",
@@ -134,6 +170,12 @@
         "team_player4": "oSee",
         "team_player5": "NAF",
 
+        "player1_img": "img/fantasy_player_img/liquid_rainwaker.webp",
+        "player2_img": "img/fantasy_player_img/liquid_yekindar.webp",
+        "player3_img": "img/fantasy_player_img/liquid_patsi.webp",
+        "player4_img": "img/fantasy_player_img/liquid_osee.webp",
+        "player5_img": "img/fantasy_player_img/liquid_naf.webp",
+
         "player_POS_EF": "EF",
         "player_POS_IGL": "IGL",
         "player_POS_SUP": "SUP",
@@ -155,6 +197,12 @@
         "team_player4": "headtr1ck",
         "team_player5": "REZ",
 
+        "player1_img": "img/fantasy_player_img/nip_brollan.webp",
+        "player2_img": "img/fantasy_player_img/nip_hampus.webp",
+        "player3_img": "img/fantasy_player_img/nip_konfig.webp",
+        "player4_img": "img/fantasy_player_img/nip_headtr1  ck.webp",
+        "player5_img": "img/fantasy_player_img/nip_rez.webp",
+
         "player_POS_EF": "EF",
         "player_POS_IGL": "IGL",
         "player_POS_SUP": "SUP",
@@ -175,6 +223,12 @@
         "team_player3": "Staehr",
         "team_player4": "device",
         "team_player5": "Buzz",
+
+        "player1_img": "img/fantasy_player_img/astralis_borup.webp",
+        "player2_img": "img/fantasy_player_img/astralis_blamef.webp",
+        "player3_img": "img/fantasy_player_img/astralis_staehr.webp",
+        "player4_img": "img/fantasy_player_img/astralis_device.webp",
+        "player5_img": "img/fantasy_player_img/astralis_buzz.webp",
 
         "player_POS_EF": "EF",
         "player_POS_IGL": "IGL",

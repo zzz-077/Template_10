@@ -12,6 +12,7 @@ const user_account_box = document.querySelector(".user_account_box");
 const user_resposive_account_box = document.querySelector(
     ".user_resposive_account_box"
 );
+const chosen_boxes = document.querySelectorAll(".chosen_boxes");
 
 //==================Functions=========================
 function windowScroll() {
@@ -213,57 +214,105 @@ switch (page) {
         login_btn.addEventListener("click", LoginPopupClick);
         dnt_have_acc_btn_a.addEventListener("click", regRedirectClick);
 
-        fetch("json_folder/fantasy_team_data.json")
-            .then((resp) => {
-                return resp.json();
-            })
-            .then((fant) => {
-                let print = "";
-                for (let i = 0; i < fant.length; i++) {
-                    let plr = fant[i];
-                    print += `
+        document.addEventListener("DOMContentLoaded", () => {
+            let fantasyData;
+
+            function handleDrop(e) {
+                e.preventDefault();
+                this.classList.remove("dropped");
+
+                // Get the player ID from the dragged player element
+                let [teamIndex, teamName, playerName] = e.dataTransfer
+                    .getData("text/plain")
+                    .split("-");
+
+                // Make sure the fantasyData is available and contains the specified teamIndex
+                if (!fantasyData || !fantasyData[teamIndex]) {
+                    console.error(
+                        "Fantasy data is not available or does not contain the specified teamIndex."
+                    );
+                    return;
+                }
+
+                // Get the URL of the player's image from the fantasyData object
+                let playerIndex = Number(this.dataset.index) - 1;
+                let playerImgUrl =
+                    fantasyData[teamIndex][`player${playerIndex + 1}_img`];
+
+                // Create an image element with the player's image and add it to the circle
+                let playerImg = document.createElement("img");
+                playerImg.src = playerImgUrl;
+                playerImg.alt = "Player Image";
+
+                // Remove any existing image in the circle and add the new one
+                this.innerHTML = "";
+                this.appendChild(playerImg);
+            }
+
+            fetch("json_folder/fantasy_team_data.json")
+                .then((resp) => {
+                    return resp.json();
+                })
+                .then((fant) => {
+                    fantasyData = fant;
+                    let print = "";
+                    for (let i = 0; i < fant.length; i++) {
+                        let plr = fant[i];
+                        let teamName = plr.team_name.toLowerCase();
+
+                        // Generate unique data-team-player values for each player
+                        let playerIndexes = [
+                            "player1",
+                            "player2",
+                            "player3",
+                            "player4",
+                            "player5",
+                        ];
+                        let dataTeamPlayers = playerIndexes.map(
+                            (player, index) =>
+                                `${teamName}-${player}${index + 1}`
+                        );
+
+                        print += `
                             <div class="fantasy_team_box_content">
                                 <div class="fnt_team_name_box">
                                     <div>
-                                        <img
-                                            src="${plr.team_img}"
-                                            alt=""
-                                        />
+                                        <img src="${plr.team_img}" alt="" />
                                         <h3>${plr.team_name}</h3>
                                     </div>
                                     <i class="fa-solid fa-caret-down"></i>
                                 </div>
                                 <ul>
-                                    <li>
-                                    ${plr.team_player1}
+                                    <li draggable="true" data-player-id="${i}-${teamName}" data-team-player="${dataTeamPlayers[0]}">
+                                        ${plr.team_player1}
                                         <div>
                                             <p>${plr.player_POS_EF}</p>
                                             <strong>${plr.EF_price}</strong>
                                         </div>
                                     </li>
-                                    <li>
-                                    ${plr.team_player2}
+                                    <li draggable="true" data-player-id="${i}-${teamName}" data-team-player="${dataTeamPlayers[1]}">
+                                        ${plr.team_player2}
                                         <div>
                                             <p>${plr.player_POS_IGL}</p>
                                             <strong>${plr.IGL_price}</strong>
                                         </div>
                                     </li>
-                                    <li>
-                                    ${plr.team_player3}
+                                    <li draggable="true" data-player-id="${i}-${teamName}" data-team-player="${dataTeamPlayers[2]}">
+                                        ${plr.team_player3}
                                         <div>
                                             <p>${plr.player_POS_SUP}</p>
                                             <strong>${plr.SUP_price}</strong>
                                         </div>
                                     </li>
-                                    <li>
-                                    ${plr.team_player4}
+                                    <li draggable="true" data-player-id="${i}-${teamName}" data-team-player="${dataTeamPlayers[3]}">
+                                        ${plr.team_player4}
                                         <div>
                                             <p>${plr.player_POS_AWP}</p>
                                             <strong>${plr.AWP_price}</strong>
                                         </div>
                                     </li>
-                                    <li>
-                                    ${plr.team_player5}
+                                    <li draggable="true" data-player-id="${i}-${teamName}" data-team-player="${dataTeamPlayers[4]}">
+                                        ${plr.team_player5}
                                         <div>
                                             <p>${plr.player_POS_LUR}</p>
                                             <strong>${plr.LUR_price}</strong>
@@ -271,26 +320,65 @@ switch (page) {
                                     </li>
                                 </ul>
                             </div>
-                            `;
-                    document.querySelector(".fantasy_team_box").innerHTML =
-                        print;
-                }
-                const fnt_team_name_box =
-                    document.querySelectorAll(".fnt_team_name_box");
-                const fantasy_team_box_content_UL = document.querySelectorAll(
-                    ".fantasy_team_box_content ul"
-                );
-                const fantasy_team_box_content = document.querySelectorAll(
-                    ".fantasy_team_box_content "
-                );
-                for (let i = 0; i < fant.length; i++) {
-                    fnt_team_name_box[i].addEventListener("click", () => {
-                        fantasy_team_box_content_UL[i].classList.toggle(
-                            "active"
-                        );
-                        fnt_team_name_box[i].classList.toggle("active");
+                        `;
+
+                        document.querySelector(".fantasy_team_box").innerHTML =
+                            print;
+                    }
+
+                    const leftColumnPlayers = document.querySelectorAll(
+                        ".fantasy_team_box_content ul li"
+                    );
+
+                    leftColumnPlayers.forEach((player) => {
+                        player.addEventListener("dragstart", (e) => {
+                            let teamIndex =
+                                e.currentTarget.dataset.playerId.split("-")[0];
+                            let teamName =
+                                e.currentTarget.dataset.teamPlayer.split(
+                                    "-"
+                                )[0];
+                            let playerName =
+                                e.currentTarget.dataset.teamPlayer.split(
+                                    "-"
+                                )[1];
+                            e.dataTransfer.setData(
+                                "text/plain",
+                                `${teamIndex}-${teamName}-${playerName}`
+                            );
+                        });
                     });
-                }
-            });
+
+                    chosen_boxes.forEach((singlePl) => {
+                        singlePl.addEventListener("dragover", (e) => {
+                            e.preventDefault();
+                            singlePl.classList.add("dropped");
+                        });
+
+                        singlePl.addEventListener("dragleave", () => {
+                            singlePl.classList.remove("dropped");
+                        });
+
+                        singlePl.addEventListener("drop", handleDrop);
+                    });
+
+                    const fnt_team_name_box =
+                        document.querySelectorAll(".fnt_team_name_box");
+                    const fantasy_team_box_content_UL =
+                        document.querySelectorAll(
+                            ".fantasy_team_box_content ul"
+                        );
+
+                    for (let i = 0; i < fant.length; i++) {
+                        fnt_team_name_box[i].addEventListener("click", () => {
+                            fantasy_team_box_content_UL[i].classList.toggle(
+                                "active"
+                            );
+                            fnt_team_name_box[i].classList.toggle("active");
+                        });
+                    }
+                });
+        });
+
         break;
 }

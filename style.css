@@ -1275,12 +1275,11 @@ textarea::placeholder {
 
 /*=================fantasy-section====================*/
 .fantasy_sec {
-    padding: 0 4rem;
+    padding: 0 1rem;
     margin-top: 120px;
 }
 .fantasy_content {
     margin: 0 auto;
-    max-width: 1440px;
     display: flex;
     justify-content: space-between;
     gap: 2rem;
@@ -1390,16 +1389,28 @@ textarea::placeholder {
     justify-content: space-evenly;
 }
 .chosen_boxes {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--tx_main-color);
 }
 .chosen_boxes.dropped {
     border: 2px dashed var(--tx_main-color);
+    background-color: #1f1f2c;
 }
 .chosen_boxes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.div {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.div img {
     width: 100%;
     height: 100%;
     object-fit: cover;
