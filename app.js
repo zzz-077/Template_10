@@ -217,36 +217,73 @@ switch (page) {
         document.addEventListener("DOMContentLoaded", () => {
             let fantasyData;
 
-            function handleDrop(e) {
-                e.preventDefault();
-                this.classList.remove("dropped");
+            function updateTable(playerName, teamName, playerIndex) {
+                // Find the team in the fantasyData array
+                let team = fantasyData[playerIndex];
 
-                // Get the player ID from the dragged player element
-                let [teamIndex, teamName, playerName] = e.dataTransfer
-                    .getData("text/plain")
-                    .split("-");
+                // Check if the team object exists and has the required properties
+                if (team) {
+                    let playerKey = `player_POS_${playerName}`;
+                    let priceKey = `${playerName}_price`;
 
-                // Make sure the fantasyData is available and contains the specified teamIndex
-                if (!fantasyData || !fantasyData[teamIndex]) {
-                    console.error(
-                        "Fantasy data is not available or does not contain the specified teamIndex."
-                    );
-                    return;
+                    // Check if the player's position and price exist in the team object
+                    if (team[playerKey] && team[priceKey]) {
+                        // Find the table
+                        let table = document.querySelector(
+                            ".fantasy_statistic_box table"
+                        );
+
+                        // Check if the player's row already exists in the table
+                        let existingRow = table.querySelector(
+                            `tr[data-player-index="${playerIndex + 1}"]`
+                        );
+
+                        if (!existingRow) {
+                            // If the row doesn't exist, create a new row
+                            let newRow = document.createElement("tr");
+                            newRow.setAttribute(
+                                "data-player-index",
+                                playerIndex + 1
+                            );
+
+                            // Create cells for player data
+                            let playerNameCell = document.createElement("td");
+                            let teamNameCell = document.createElement("td");
+                            let positionCell = document.createElement("td");
+                            let priceCell = document.createElement("td");
+
+                            // Add data to the cells from the team object
+                            playerNameCell.textContent =
+                                team[`team_player${playerName}`];
+                            teamNameCell.textContent = team["team_name"];
+                            positionCell.textContent = team[playerKey];
+                            priceCell.textContent = team[priceKey];
+
+                            // Append the cells to the row
+                            newRow.appendChild(playerNameCell);
+                            newRow.appendChild(teamNameCell);
+                            newRow.appendChild(positionCell);
+                            newRow.appendChild(priceCell);
+
+                            // Append the new row to the table
+                            table.appendChild(newRow);
+                        } else {
+                            // If the row already exists, update the existing cells with the new data
+                            let cells = existingRow.querySelectorAll("td");
+                            cells[0].textContent =
+                                team[`team_player${playerName}`];
+                            cells[1].textContent = team["team_name"];
+                            cells[2].textContent = team[playerKey];
+                            cells[3].textContent = team[priceKey];
+                        }
+                    } else {
+                        console.error(
+                            `Player data not found for position: ${playerName}`
+                        );
+                    }
+                } else {
+                    console.error("Team data not found.");
                 }
-
-                // Get the URL of the player's image from the fantasyData object
-                let playerIndex = Number(this.dataset.index) - 1;
-                let playerImgUrl =
-                    fantasyData[teamIndex][`player${playerIndex + 1}_img`];
-
-                // Create an image element with the player's image and add it to the circle
-                let playerImg = document.createElement("img");
-                playerImg.src = playerImgUrl;
-                playerImg.alt = "Player Image";
-
-                // Remove any existing image in the circle and add the new one
-                this.innerHTML = "";
-                this.appendChild(playerImg);
             }
 
             fetch("json_folder/fantasy_team_data.json")
@@ -260,7 +297,6 @@ switch (page) {
                         let plr = fant[i];
                         let teamName = plr.team_name.toLowerCase();
 
-                        // Generate unique data-team-player values for each player
                         let playerIndexes = [
                             "player1",
                             "player2",
@@ -354,12 +390,49 @@ switch (page) {
                             e.preventDefault();
                             singlePl.classList.add("dropped");
                         });
-
+                        0;
                         singlePl.addEventListener("dragleave", () => {
                             singlePl.classList.remove("dropped");
                         });
 
-                        singlePl.addEventListener("drop", handleDrop);
+                        singlePl.addEventListener("drop", (e) => {
+                            e.preventDefault();
+                            singlePl.classList.remove("dropped");
+
+                            // Get the player ID from the dragged player element
+                            let [teamIndex, teamName, playerName] =
+                                e.dataTransfer.getData("text/plain").split("-");
+
+                            // Make sure the fantasyData is available and contains the specified teamIndex
+                            if (!fantasyData || !fantasyData[teamIndex]) {
+                                console.error(
+                                    "Fantasy data is not available or does not contain the specified teamIndex."
+                                );
+                                return;
+                            }
+
+                            // Get the player's index and name
+                            let playerIndex =
+                                Number(singlePl.dataset.index) - 1;
+
+                            // Get the URL of the player's image from the fantasyData object
+                            let playerImgUrl =
+                                fantasyData[teamIndex][
+                                    `player${playerIndex + 1}_img`
+                                ];
+
+                            // Create an image element with the player's image and add it to the circle
+                            let playerImg = document.createElement("img");
+                            playerImg.src = playerImgUrl;
+                            playerImg.alt = "Player Image";
+
+                            // Remove any existing image in the circle and add the new one
+                            singlePl.innerHTML = "";
+                            singlePl.appendChild(playerImg);
+
+                            // Call the updateTable function to add the player data to the table
+                            updateTable(playerName, teamName, playerIndex);
+                        });
                     });
 
                     const fnt_team_name_box =

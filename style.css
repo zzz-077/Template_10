@@ -1383,6 +1383,9 @@ textarea::placeholder {
     padding-top: 5rem;
     border-radius: 0.2rem;
     background-color: var(--nav_bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .fantasy_chosen_player_box {
     display: flex;
@@ -1415,6 +1418,42 @@ textarea::placeholder {
     height: 100%;
     object-fit: cover;
 }
+.fantasy_statistic_box {
+    width: 100%;
+    margin-top: 4rem;
+    border-radius: 0.2rem;
+    padding: 1rem;
+}
+.fantasy_statistic_box table {
+    width: 100%;
+    text-align: left;
+}
+.fantasy_statistic_box th,
+td {
+    border: 1px solid var(--tx_main-color);
+    color: rgba(245, 245, 245, 0.763);
+    padding: 2px 5px;
+}
+.fantasy_statistic_box th {
+    border: 2px solid var(--tx_main-color);
+    color: rgba(245, 245, 245, 0.963);
+}
+.fantasy_statistic_box tr th:nth-child(2),
+th:nth-child(3),
+th:nth-child(4) {
+    width: 120px;
+    text-align: right;
+}
+.fantasy_statistic_box tr td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4) {
+    width: 120px;
+    text-align: right;
+}
+.fantasy_statistic_box tr td {
+    height: 31px;
+}
+
 /*=================mediaquery-section====================*/
 @media (max-width: 1305px) {
     .match_content ul li {
