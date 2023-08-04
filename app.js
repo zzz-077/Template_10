@@ -216,75 +216,10 @@ switch (page) {
 
         document.addEventListener("DOMContentLoaded", () => {
             let fantasyData;
-
-            function updateTable(playerName, teamName, playerIndex) {
-                // Find the team in the fantasyData array
-                let team = fantasyData[playerIndex];
-
-                // Check if the team object exists and has the required properties
-                if (team) {
-                    let playerKey = `player_POS_${playerName}`;
-                    let priceKey = `${playerName}_price`;
-
-                    // Check if the player's position and price exist in the team object
-                    if (team[playerKey] && team[priceKey]) {
-                        // Find the table
-                        let table = document.querySelector(
-                            ".fantasy_statistic_box table"
-                        );
-
-                        // Check if the player's row already exists in the table
-                        let existingRow = table.querySelector(
-                            `tr[data-player-index="${playerIndex + 1}"]`
-                        );
-
-                        if (!existingRow) {
-                            // If the row doesn't exist, create a new row
-                            let newRow = document.createElement("tr");
-                            newRow.setAttribute(
-                                "data-player-index",
-                                playerIndex + 1
-                            );
-
-                            // Create cells for player data
-                            let playerNameCell = document.createElement("td");
-                            let teamNameCell = document.createElement("td");
-                            let positionCell = document.createElement("td");
-                            let priceCell = document.createElement("td");
-
-                            // Add data to the cells from the team object
-                            playerNameCell.textContent =
-                                team[`team_player${playerName}`];
-                            teamNameCell.textContent = team["team_name"];
-                            positionCell.textContent = team[playerKey];
-                            priceCell.textContent = team[priceKey];
-
-                            // Append the cells to the row
-                            newRow.appendChild(playerNameCell);
-                            newRow.appendChild(teamNameCell);
-                            newRow.appendChild(positionCell);
-                            newRow.appendChild(priceCell);
-
-                            // Append the new row to the table
-                            table.appendChild(newRow);
-                        } else {
-                            // If the row already exists, update the existing cells with the new data
-                            let cells = existingRow.querySelectorAll("td");
-                            cells[0].textContent =
-                                team[`team_player${playerName}`];
-                            cells[1].textContent = team["team_name"];
-                            cells[2].textContent = team[playerKey];
-                            cells[3].textContent = team[priceKey];
-                        }
-                    } else {
-                        console.error(
-                            `Player data not found for position: ${playerName}`
-                        );
-                    }
-                } else {
-                    console.error("Team data not found.");
-                }
-            }
+            const fantasyStatisticBoxTable = document.querySelector(
+                ".fantasy_statistic_box table"
+            );
+            const selectedPlayers = [];
 
             fetch("json_folder/fantasy_team_data.json")
                 .then((resp) => {
@@ -322,35 +257,35 @@ switch (page) {
                                     <li draggable="true" data-player-id="${i}-${teamName}" data-team-player="${dataTeamPlayers[0]}">
                                         ${plr.team_player1}
                                         <div>
-                                            <p>${plr.player_POS_EF}</p>
+                                            <p>${plr.player_POS_1}</p>
                                             <strong>${plr.EF_price}</strong>
                                         </div>
                                     </li>
                                     <li draggable="true" data-player-id="${i}-${teamName}" data-team-player="${dataTeamPlayers[1]}">
                                         ${plr.team_player2}
                                         <div>
-                                            <p>${plr.player_POS_IGL}</p>
+                                            <p>${plr.player_POS_2}</p>
                                             <strong>${plr.IGL_price}</strong>
                                         </div>
                                     </li>
                                     <li draggable="true" data-player-id="${i}-${teamName}" data-team-player="${dataTeamPlayers[2]}">
                                         ${plr.team_player3}
                                         <div>
-                                            <p>${plr.player_POS_SUP}</p>
+                                            <p>${plr.player_POS_3}</p>
                                             <strong>${plr.SUP_price}</strong>
                                         </div>
                                     </li>
                                     <li draggable="true" data-player-id="${i}-${teamName}" data-team-player="${dataTeamPlayers[3]}">
                                         ${plr.team_player4}
                                         <div>
-                                            <p>${plr.player_POS_AWP}</p>
+                                            <p>${plr.player_POS_4}</p>
                                             <strong>${plr.AWP_price}</strong>
                                         </div>
                                     </li>
                                     <li draggable="true" data-player-id="${i}-${teamName}" data-team-player="${dataTeamPlayers[4]}">
                                         ${plr.team_player5}
                                         <div>
-                                            <p>${plr.player_POS_LUR}</p>
+                                            <p>${plr.player_POS_5}</p>
                                             <strong>${plr.LUR_price}</strong>
                                         </div>
                                     </li>
@@ -382,6 +317,13 @@ switch (page) {
                                 "text/plain",
                                 `${teamIndex}-${teamName}-${playerName}`
                             );
+
+                            if (window.innerWidth < 600) {
+                                print.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "center",
+                                });
+                            }
                         });
                     });
 
@@ -414,26 +356,87 @@ switch (page) {
                             // Get the player's index and name
                             let playerIndex =
                                 Number(singlePl.dataset.index) - 1;
-
                             // Get the URL of the player's image from the fantasyData object
                             let playerImgUrl =
                                 fantasyData[teamIndex][
                                     `player${playerIndex + 1}_img`
                                 ];
 
+                            let playerNm =
+                                fantasyData[teamIndex][
+                                    `team_player${playerIndex + 1}`
+                                ];
+                            let playerTeam =
+                                fantasyData[teamIndex]["team_name"];
+
+                            let playerPosition =
+                                fantasyData[teamIndex][
+                                    `player_POS_${playerIndex + 1}`
+                                ];
+                            let playerPrice =
+                                fantasyData[teamIndex][
+                                    `${playerPosition}_price`
+                                ];
+
                             // Create an image element with the player's image and add it to the circle
                             let playerImg = document.createElement("img");
                             playerImg.src = playerImgUrl;
-                            playerImg.alt = "Player Image";
 
                             // Remove any existing image in the circle and add the new one
                             singlePl.innerHTML = "";
                             singlePl.appendChild(playerImg);
 
-                            // Call the updateTable function to add the player data to the table
-                            updateTable(playerName, teamName, playerIndex);
+                            if (window.innerWidth < 600) {
+                                singlePl.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "center",
+                                });
+                            }
+
+                            selectedPlayers[playerIndex] = {
+                                playerNm,
+                                playerTeam,
+                                playerPosition,
+                                playerPrice,
+                            };
+
+                            updateFantasyStatisticBoxTable();
                         });
                     });
+
+                    function updateFantasyStatisticBoxTable() {
+                        fantasyStatisticBoxTable.innerHTML = `
+                            <tr>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>Position</th>
+                                <th>Price</th>
+                            </tr>
+                        `;
+
+                        for (let i = 0; i < selectedPlayers.length; i++) {
+                            const playerInfo = selectedPlayers[i];
+                            if (playerInfo) {
+                                const {
+                                    playerNm,
+                                    playerTeam,
+                                    playerPosition,
+                                    playerPrice,
+                                } = playerInfo;
+                                const playerInfoRow =
+                                    document.createElement("tr");
+                                playerInfoRow.innerHTML = `
+                                    <td>${playerNm}</td>
+                                    <td>${playerTeam}</td>
+                                    <td>${playerPosition}</td>
+                                    <td>${playerPrice}</td>
+                                `;
+                                fantasyStatisticBoxTable.appendChild(
+                                    playerInfoRow
+                                );
+                            }
+                        }
+                    }
 
                     const fnt_team_name_box =
                         document.querySelectorAll(".fnt_team_name_box");
