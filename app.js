@@ -13,6 +13,9 @@ const user_resposive_account_box = document.querySelector(
     ".user_resposive_account_box"
 );
 const chosen_boxes = document.querySelectorAll(".chosen_boxes");
+const grp_ttl1 = document.querySelector(".grp_ttl1");
+const grp_brck1 = document.querySelector(".grp_brck1");
+const list_1 = document.querySelector(".list_1");
 
 //==================Functions=========================
 function windowScroll() {
@@ -317,17 +320,53 @@ switch (page) {
                                 "text/plain",
                                 `${teamIndex}-${teamName}-${playerName}`
                             );
-
-                            if (window.innerWidth < 600) {
-                                print.scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "center",
-                                });
-                            }
                         });
                     });
 
                     chosen_boxes.forEach((singlePl) => {
+                        let startCoords = { x: 0, y: 0 };
+
+                        singlePl.addEventListener("dragstart", (e) => {
+                            isDragging = true;
+                            startCoords.x = e.clientX;
+                            startCoords.y = e.clientY;
+                        });
+
+                        singlePl.addEventListener("drag", (e) => {
+                            if (isDragging && window.innerWidth < 600) {
+                                const bottomThreshold =
+                                    window.innerHeight * 0.9; // Adjust the threshold as needed
+                                const horizontalThreshold =
+                                    window.innerWidth * 0.1; // Adjust the threshold as needed
+
+                                const deltaY = Math.abs(
+                                    e.clientY - startCoords.y
+                                );
+                                const deltaX = Math.abs(
+                                    e.clientX - startCoords.x
+                                );
+
+                                if (
+                                    deltaY > deltaX &&
+                                    e.clientY > bottomThreshold &&
+                                    deltaX < horizontalThreshold
+                                ) {
+                                    const fantasyChosenPlayerBox =
+                                        document.querySelector(
+                                            ".fantasy_chosen_player_box"
+                                        );
+                                    fantasyChosenPlayerBox.scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "end",
+                                    });
+                                }
+                            }
+                        });
+
+                        singlePl.addEventListener("dragend", () => {
+                            isDragging = false;
+                        });
+
                         singlePl.addEventListener("dragover", (e) => {
                             e.preventDefault();
                             singlePl.classList.add("dropped");
@@ -392,16 +431,32 @@ switch (page) {
                                     block: "center",
                                 });
                             }
-
                             selectedPlayers[playerIndex] = {
                                 playerNm,
-                                playerTeam,
-                                playerPosition,
-                                playerPrice,
+                                playerTeam: fantasyData[teamIndex]["team_name"],
+                                playerPosition:
+                                    fantasyData[teamIndex][
+                                        `player_POS_${playerIndex + 1}`
+                                    ],
+                                playerPrice:
+                                    fantasyData[teamIndex][
+                                        `${
+                                            fantasyData[teamIndex][
+                                                `player_POS_${playerIndex + 1}`
+                                            ]
+                                        }_price`
+                                    ],
+                                circle: singlePl,
                             };
 
                             updateFantasyStatisticBoxTable();
                         });
+                    });
+
+                    window.addEventListener("orientationchange", () => {
+                        if (isDragging) {
+                            isOrientationChanged = true;
+                        }
                     });
 
                     function updateFantasyStatisticBoxTable() {
@@ -413,9 +468,7 @@ switch (page) {
                                 <th>Price</th>
                             </tr>
                         `;
-
-                        for (let i = 0; i < selectedPlayers.length; i++) {
-                            const playerInfo = selectedPlayers[i];
+                        selectedPlayers.forEach((playerInfo, index) => {
                             if (playerInfo) {
                                 const {
                                     playerNm,
@@ -430,11 +483,48 @@ switch (page) {
                                     <td>${playerTeam}</td>
                                     <td>${playerPosition}</td>
                                     <td>${playerPrice}</td>
+                                    <td><i class="fa-solid fa-trash delete-icon" data-player-index="${index}"></i></td>
                                 `;
                                 fantasyStatisticBoxTable.appendChild(
                                     playerInfoRow
                                 );
                             }
+                        });
+
+                        attachDeleteListeners();
+                    }
+
+                    function attachDeleteListeners() {
+                        const deleteIcons =
+                            document.querySelectorAll(".delete-icon");
+
+                        // Attach event listeners
+                        deleteIcons.forEach((icon, index) => {
+                            icon.addEventListener("click", (event) =>
+                                handleDeletePlayer(event, index)
+                            );
+                        });
+                    }
+
+                    let deleteInProgress = false;
+
+                    function handleDeletePlayer(event, index) {
+                        if (!deleteInProgress && selectedPlayers[index]) {
+                            deleteInProgress = true;
+
+                            // Clear the circle in which the player's image is displayed
+                            selectedPlayers[index].circle.innerHTML = "";
+
+                            // Remove the player from the selectedPlayers array
+                            selectedPlayers.splice(index, 1);
+
+                            // Update the table and reattach delete listeners
+                            updateFantasyStatisticBoxTable();
+                            attachDeleteListeners();
+
+                            setTimeout(() => {
+                                deleteInProgress = false;
+                            }, 100);
                         }
                     }
 
@@ -455,6 +545,48 @@ switch (page) {
                     }
                 });
         });
+        break;
+
+    case "games_BD":
+        navbar_btn.addEventListener("click", navbarClick);
+        window.addEventListener("scroll", windowScroll);
+        reg_btn.addEventListener("click", RegPopupClick);
+        login_btn.addEventListener("click", LoginPopupClick);
+        dnt_have_acc_btn_a.addEventListener("click", regRedirectClick);
+        grp_ttl1.addEventListener("click", grpttl1Click);
+
+        function grpttl1Click() {
+            grp_brck1.classList.toggle("active");
+            grp_ttl1.classList.toggle("active");
+            list_1.classList.toggle("active");
+        }
+
+        fetch("json_folder/team_ldb.json")
+            .then((resp) => {
+                return resp.json();
+            })
+            .then((atnd) => {
+                let print = "";
+                for (let i = 0; i < atnd.length; i++) {
+                    let plr = atnd[i];
+                    print += `
+                            <div class="team_box">
+                            <div class="team_img">
+                                <img
+                                    src="${plr.ldb_team_img}"
+                                    alt="#"
+                                />
+                            </div>
+                            <div class="team_title">
+                                <h3>${plr.ldb_team_name}</h3>
+                            </div>
+                            <div class="team_place">#${plr.id}</div>
+                            </div>
+                            `;
+                    document.querySelector(".teams_attend_box").innerHTML =
+                        print;
+                }
+            });
 
         break;
 }
