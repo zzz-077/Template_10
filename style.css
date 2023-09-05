@@ -1693,9 +1693,20 @@ td:nth-child(4) {
     padding: 0.25rem 0.5rem;
     border-bottom: 1px solid #2b2b31bf;
 }
-
+.first_team_box h4.winner {
+    color: green;
+}
+.first_team_box h4.loser {
+    color: red;
+}
 .second_team_box {
     padding: 0.25rem 0.5rem;
+}
+.second_team_box h4.winner {
+    color: green;
+}
+.second_team_box h4.loser {
+    color: red;
 }
 
 .team_pair div {

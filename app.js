@@ -561,6 +561,200 @@ switch (page) {
             list_1.classList.toggle("active");
         }
 
+        function scoreColor() {
+            let team1 = document.querySelectorAll(".first_team_box h4");
+            let team2 = document.querySelectorAll(".second_team_box h4");
+            for (let j = 0; j < team1.length; j++) {
+                if (team1[j].textContent < 2) {
+                    team1[j].classList.add("loser");
+                } else if (team1[j].textContent == 2) {
+                    team1[j].classList.add("winner");
+                }
+                if (team2[j].textContent < 2) {
+                    team2[j].classList.add("loser");
+                } else if (team2[j].textContent == 2) {
+                    team2[j].classList.add("winner");
+                }
+            }
+        }
+
+        fetch("json_folder/games.json")
+            .then((resp) => {
+                return resp.json();
+            })
+            .then((games) => {
+                let print = "";
+                let print1 = "";
+                let print2 = "";
+                let print3 = "";
+                for (let i = 0; i < 8; i++) {
+                    let plr = games[i];
+                    print += `
+                    
+                                        <div class="team_pair">
+                                            <div class="pair_schedult">
+                                                <p>${plr.Round_sixteen_time}</p>
+                                                <p>${plr.Round_sixteen_data}</p>
+                                            </div>
+                                            <div class="pair_box">
+                                                <div class="first_team_box">
+                                                    <div>
+                                                        <img
+                                                        src="${plr.Rd_stn_1_team_img}"
+                                                            alt="#"
+                                                        />
+                                                        <p>${plr.Rd_stn_1_team_name}</p>
+                                                    </div>
+                                                    <h4>${plr.Rd_stn_1_team_score}</h4>
+                                                </div>
+                                                <div class="second_team_box">
+                                                    <div>
+                                                        <img
+                                                        src="${plr.Rd_stn_2_team_img}"
+                                                            alt="#"
+                                                            />
+                                                        <p>${plr.Rd_stn_2_team_name}</p>
+                                                    </div>
+                                                    <h4>${plr.Rd_stn_2_team_score}</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                             `;
+
+                    document.querySelector(
+                        ".round_of_sixteen_box .pair_contents"
+                    ).innerHTML = print;
+                    let team1 = document.querySelectorAll(".first_team_box h4");
+                    let team2 = document.querySelectorAll(
+                        ".second_team_box h4"
+                    );
+                }
+                for (let i = 8; i < 12; i++) {
+                    let plr1 = games[i];
+                    print1 += `
+                    
+                                        <div class="team_pair">
+                                            <div class="pair_schedult">
+                                                <p>${plr1.qurt_fin_time}</p>
+                                                <p>${plr1.qurt_fin_data}</p>
+                                            </div>
+                                            <div class="pair_box">
+                                                <div class="first_team_box">
+                                                    <div>
+                                                        <img
+                                                        src="${plr1.qurt_fin_1_team_img}"
+                                                            alt="#"
+                                                        />
+                                                        <p>${plr1.qurt_fin_1_team_name}</p>
+                                                    </div>
+                                                    <h4>${plr1.qurt_fin_1_team_score}</h4>
+                                                </div>
+                                                <div class="second_team_box">
+                                                    <div>
+                                                        <img
+                                                        src="${plr1.qurt_fin_2_team_img}"
+                                                            alt="#"
+                                                            />
+                                                        <p>${plr1.qurt_fin_2_team_name}</p>
+                                                    </div>
+                                                    <h4>${plr1.qurt_fin_2_team_score}</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                             `;
+                    document.querySelector(
+                        ".quarterfilans_box .pair_contents"
+                    ).innerHTML = print1;
+                    let team1 = document.querySelectorAll(".first_team_box h4");
+                    let team2 = document.querySelectorAll(
+                        ".second_team_box h4"
+                    );
+                }
+                for (let i = 12; i < 14; i++) {
+                    let plr2 = games[i];
+                    print2 += `
+                    
+                                        <div class="team_pair">
+                                            <div class="pair_schedult">
+                                                <p>${plr2.semi_fin_time}</p>
+                                                <p>${plr2.semi_fin_data}</p>
+                                            </div>
+                                            <div class="pair_box">
+                                                <div class="first_team_box">
+                                                    <div>
+                                                        <img
+                                                        src="${plr2.semi_fin_1_team_img}"
+                                                            alt="#"
+                                                        />
+                                                        <p>${plr2.semi_fin_1_team_name}</p>
+                                                    </div>
+                                                    <h4>${plr2.semi_fin_1_team_score}</h4>
+                                                </div>
+                                                <div class="second_team_box">
+                                                    <div>
+                                                        <img
+                                                        src="${plr2.semi_fin_2_team_img}"
+                                                            alt="#"
+                                                            />
+                                                        <p>${plr2.semi_fin_2_team_name}</p>
+                                                    </div>
+                                                    <h4>${plr2.semi_fin_2_team_score}</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                             `;
+                    document.querySelector(
+                        ".semifinals_box .pair_contents"
+                    ).innerHTML = print2;
+                    let team1 = document.querySelectorAll(".first_team_box h4");
+                    let team2 = document.querySelectorAll(
+                        ".second_team_box h4"
+                    );
+                }
+                for (let i = 14; i < 15; i++) {
+                    let plr3 = games[i];
+                    print3 += `
+                    
+                                        <div class="team_pair">
+                                            <div class="pair_schedult">
+                                                <p>${plr3.final_time}</p>
+                                                <p>${plr3.final_data}</p>
+                                            </div>
+                                            <div class="pair_box">
+                                                <div class="first_team_box">
+                                                    <div>
+                                                        <img
+                                                        src="${plr3.final_1_team_img}"
+                                                            alt="#"
+                                                        />
+                                                        <p>${plr3.final_1_team_name}</p>
+                                                    </div>
+                                                    <h4>${plr3.final_1_team_score}</h4>
+                                                </div>
+                                                <div class="second_team_box">
+                                                    <div>
+                                                        <img
+                                                        src="${plr3.final_1_team_img}"
+                                                            alt="#"
+                                                            />
+                                                        <p>${plr3.final_2_team_name}</p>
+                                                    </div>
+                                                    <h4>${plr3.final_2_team_score}</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                             `;
+                    document.querySelector(
+                        ".final_box .pair_contents"
+                    ).innerHTML = print3;
+                    let team1 = document.querySelectorAll(".first_team_box h4");
+                    let team2 = document.querySelectorAll(
+                        ".second_team_box h4"
+                    );
+                    scoreColor();
+                }
+            });
+
         fetch("json_folder/team_ldb.json")
             .then((resp) => {
                 return resp.json();

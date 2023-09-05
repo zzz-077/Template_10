@@ -1,0 +1,167 @@
+[
+    {
+        "id": 1,
+        "Round_sixteen_time": "18:00",
+        "Round_sixteen_data": "26 SEP",
+        "Rd_stn_1_team_img": "img/data_team_img/astralis_logo.png",
+        "Rd_stn_1_team_name": "Astralis",
+        "Rd_stn_1_team_score": "0",
+        "Rd_stn_2_team_img": "img/data_team_img/big_logo.png",
+        "Rd_stn_2_team_name": "BIG",
+        "Rd_stn_2_team_score": "2"
+    },
+    {
+        "id": 2,
+        "Round_sixteen_time": "20:00",
+        "Round_sixteen_data": "26 SEP",
+        "Rd_stn_1_team_img": "img/data_team_img/c9_logo.png",
+        "Rd_stn_1_team_name": "Cloud 9",
+        "Rd_stn_1_team_score": "2",
+        "Rd_stn_2_team_img": "img/data_team_img/complexity_logo.png",
+        "Rd_stn_2_team_name": "Complexity",
+        "Rd_stn_2_team_score": "1"
+    },
+    {
+        "id": 3,
+        "Round_sixteen_time": "16:00",
+        "Round_sixteen_data": "27 SEP",
+        "Rd_stn_1_team_img": "img/data_team_img/ence_logo.png",
+        "Rd_stn_1_team_name": "ENCE",
+        "Rd_stn_1_team_score": "1",
+        "Rd_stn_2_team_img": "img/data_team_img/faze_logo.png",
+        "Rd_stn_2_team_name": "Faze",
+        "Rd_stn_2_team_score": "2"
+    },
+    {
+        "id": 4,
+        "Round_sixteen_time": "19:00",
+        "Round_sixteen_data": "27 SEP",
+        "Rd_stn_1_team_img": "img/data_team_img/fnatic_logo.png",
+        "Rd_stn_1_team_name": "Fnatic",
+        "Rd_stn_1_team_score": "0",
+        "Rd_stn_2_team_img": "img/data_team_img/furia_logo.png",
+        "Rd_stn_2_team_name": "Furia",
+        "Rd_stn_2_team_score": "2"
+    },
+    {
+        "id": 5,
+        "Round_sixteen_time": "20:00",
+        "Round_sixteen_data": "28 SEP",
+        "Rd_stn_1_team_img": "img/data_team_img/G2_logo.png",
+        "Rd_stn_1_team_name": "G2",
+        "Rd_stn_1_team_score": "2",
+        "Rd_stn_2_team_img": "img/data_team_img/gambit_logo.png",
+        "Rd_stn_2_team_name": "Gambit",
+        "Rd_stn_2_team_score": "0"
+    },
+    {
+        "id": 6,
+        "Round_sixteen_time": "22:00",
+        "Round_sixteen_data": "28 SEP",
+        "Rd_stn_1_team_img": "img/data_team_img/heroic_logo.png",
+        "Rd_stn_1_team_name": "Heroic",
+        "Rd_stn_1_team_score": "2",
+        "Rd_stn_2_team_img": "img/data_team_img/liquid_logo.png",
+        "Rd_stn_2_team_name": "Liquid",
+        "Rd_stn_2_team_score": "1"
+    },
+    {
+        "id": 7,
+        "Round_sixteen_time": "16:00",
+        "Round_sixteen_data": "29 SEP",
+        "Rd_stn_1_team_img": "img/data_team_img/navi_logo.png",
+        "Rd_stn_1_team_name": "NAVI",
+        "Rd_stn_1_team_score": "2",
+        "Rd_stn_2_team_img": "img/data_team_img/nip_logo.png",
+        "Rd_stn_2_team_name": "NIP",
+        "Rd_stn_2_team_score": "1"
+    },
+    {
+        "id": 8,
+        "Round_sixteen_time": "18:00",
+        "Round_sixteen_data": "29 SEP",
+        "Rd_stn_1_team_img": "img/data_team_img/og_logo.png",
+        "Rd_stn_1_team_name": "OG",
+        "Rd_stn_1_team_score": "1",
+        "Rd_stn_2_team_img": "img/data_team_img/vitality_logo.png",
+        "Rd_stn_2_team_name": "Vitality",
+        "Rd_stn_2_team_score": "2"
+    },
+    {
+        "id": 9,
+        "qurt_fin_time": "20:00",
+        "qurt_fin_data": "30 SEP",
+        "qurt_fin_1_team_img": "img/data_team_img/astralis_logo.png",
+        "qurt_fin_1_team_name": "Astralis",
+        "qurt_fin_1_team_score": "1",
+        "qurt_fin_2_team_img": "img/data_team_img/c9_logo.png",
+        "qurt_fin_2_team_name": "Cloud 9",
+        "qurt_fin_2_team_score": "2"
+    },
+    {
+        "id": 10,
+        "qurt_fin_time": "22:00",
+        "qurt_fin_data": "30 SEP",
+        "qurt_fin_1_team_img": "img/data_team_img/faze_logo.png",
+        "qurt_fin_1_team_name": "Faze",
+        "qurt_fin_1_team_score": "2",
+        "qurt_fin_2_team_img": "img/data_team_img/furia_logo.png",
+        "qurt_fin_2_team_name": "Furia",
+        "qurt_fin_2_team_score": "0"
+    },
+    {
+        "id": 11,
+        "qurt_fin_time": "20:00",
+        "qurt_fin_data": "31 SEP",
+        "qurt_fin_1_team_img": "img/data_team_img/G2_logo.png",
+        "qurt_fin_1_team_name": "G2",
+        "qurt_fin_1_team_score": "2",
+        "qurt_fin_2_team_img": "img/data_team_img/heroic_logo.png",
+        "qurt_fin_2_team_name": "Heroic",
+        "qurt_fin_2_team_score": "0"
+    },
+    {
+        "id": 12,
+        "qurt_fin_time": "22:00",
+        "qurt_fin_data": "31 SEP",
+        "qurt_fin_1_team_img": "img/data_team_img/navi_logo.png",
+        "qurt_fin_1_team_name": "NAVI",
+        "qurt_fin_1_team_score": "1",
+        "qurt_fin_2_team_img": "img/data_team_img/vitality_logo.png",
+        "qurt_fin_2_team_name": "Vitality",
+        "qurt_fin_2_team_score": "2"
+    },
+    {
+        "id": 13,
+        "semi_fin_time": "20:00",
+        "semi_fin_data": "1 OCT",
+        "semi_fin_1_team_img": "img/data_team_img/c9_logo.png",
+        "semi_fin_1_team_name": "Cloud 9",
+        "semi_fin_1_team_score": "",
+        "semi_fin_2_team_img": "img/data_team_img/faze_logo.png",
+        "semi_fin_2_team_name": "Faze",
+        "semi_fin_2_team_score": ""
+    },
+    {
+        "id": 14,
+        "semi_fin_time": "22:00",
+        "semi_fin_data": "1 OCT",
+        "semi_fin_1_team_img": "img/data_team_img/G2_logo.png",
+        "semi_fin_1_team_name": "G2",
+        "semi_fin_1_team_score": "",
+        "semi_fin_2_team_img": "img/data_team_img/vitality_logo.png",
+        "semi_fin_2_team_name": "Vitality",
+        "semi_fin_2_team_score": ""
+    },
+    {
+        "id": 15,
+        "final_time": "22:00",
+        "final_data": "2 OCT",
+        "final_1_team_img": "img/question_mark_img.png",
+        "final_1_team_name": "TBD",
+        "final_1_team_score": "",
+        "final_2_team_img": "img/question_mark_img.png",
+        "final_2_team_name": "TBD",
+        "final_2_team_score": ""
+    }
+]
