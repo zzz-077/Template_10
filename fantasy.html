@@ -1,276 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    </head>
-    <body id="fantasy_BD">
-        <!--==============loader-section================-->
-        <div class="loader">
-            <div class="loader_cont">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  </head>
+  <body id="fantasy_BD">
+    <!--==============loader-section================-->
+    <div class="loader">
+      <div class="loader_cont">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <!--==============main-container================-->
+    <div class="content">
+      <!--==============navbar-section================-->
+      <nav>
+        <div class="nav_container">
+          <div class="nav_row">
+            <div class="logo_box">
+              <a href="index.html">
+                <img src="img/logo.png" alt="" />
+              </a>
             </div>
-        </div>
-        <!--==============main-container================-->
-        <div class="content">
-            <!--==============navbar-section================-->
-            <nav>
-                <div class="nav_container">
-                    <div class="nav_row">
-                        <div class="logo_box">
-                            <a href="index.html">
-                                <img src="img/logo.png" alt="" />
-                            </a>
-                        </div>
-                        <ul>
-                            <li>
-                                <div>
-                                    <a href="fantasy.html">Fantasy</a>
-                                    <i class="fa fa-angle-down"></i>
-                                    <ul id="nav_link_hover">
-                                        <li><a href="#">My team</a></li>
-                                        <li>
-                                            <a href="liderboard.html"
-                                                >Liderboard</a
-                                            >
-                                        </li>
-                                        <li><a href="#">Rules</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="games.html">Games</a></li>
-                            <li><a href="#">Prizes</a></li>
-                        </ul>
-                    </div>
-                    <div class="profile_box">
-                        <div class="user_account_box">
-                            <div class="user_acount_content">
-                                <div class="profile_left_box">
-                                    <div class="username_box">
-                                        <h3>zzz077</h3>
-                                        <i class="fa fa-angle-down"></i>
-                                        <div class="exit_box">
-                                            <p>Logout</p>
-                                            <i class="fa fa-sign-out"></i>
-                                        </div>
-                                    </div>
-                                    <div class="credit_box">
-                                        <div>
-                                            <p>Balance:</p>
-                                            <p>45C</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="profile_right_box">
-                                    <img src="img/user_img.jpg" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="register_box active">
-                            <button id="reg_btn">Register</button>
-                            <button id="login_btn">
-                                <i class="fa-regular fa-user"></i> Log in
-                            </button>
-                        </div>
-                        <div class="navbar_menu">
-                            <span class="line1"></span>
-                            <span class="line2"></span>
-                            <span class="line3"></span>
-                        </div>
-                    </div>
-                </div>
-                <ul class="responsive_nav">
-                    <li><a href="fantasy.html">Fantasy</a></li>
-                    <li><a href="#">My team</a></li>
-                    <li><a href="liderboard.html">Liderboard</a></li>
+            <ul>
+              <li>
+                <div>
+                  <a href="fantasy.html">Fantasy</a>
+                  <i class="fa fa-angle-down"></i>
+                  <ul id="nav_link_hover">
+                    <li>
+                      <a href="liderboard.html">Liderboard</a>
+                    </li>
                     <li><a href="#">Rules</a></li>
-                    <li><a href="games.html">Games</a></li>
-                    <li><a href="#">Prizes</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="#">Prizes</a></li>
+            </ul>
+          </div>
+          <div class="profile_box">
+            <div class="user_account_box">
+              <div class="user_acount_content">
+                <div class="profile_left_box">
+                  <div class="username_box">
+                    <h3>zzz077</h3>
+                    <i class="fa fa-angle-down"></i>
+                    <div class="exit_box">
+                      <p>Logout</p>
+                      <i class="fa fa-sign-out"></i>
+                    </div>
+                  </div>
+                  <div class="credit_box">
                     <div>
-                        <div class="user_resposive_account_box">
-                            <div class="user_acount_content">
-                                <div class="profile_right_box">
-                                    <img src="img/user_img.jpg" alt="" />
-                                </div>
-                                <div class="profile_left_box">
-                                    <div class="username_box">
-                                        <h3>zzz077</h3>
-                                        <i class="fa fa-angle-down"></i>
-                                        <div class="exit_box">
-                                            <p>Logout</p>
-                                            <i class="fa fa-sign-out"></i>
-                                        </div>
-                                    </div>
-                                    <div class="credit_box">
-                                        <div>
-                                            <p>Balance:</p>
-                                            <p>45C</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      <p>Balance:</p>
+                      <p>45C</p>
                     </div>
-                </ul>
-            </nav>
-            <br />
-            <!--==============fantasy-section================-->
-            <section class="fantasy_sec">
-                <div class="fantasy_content">
-                    <div class="fantasy_left_column">
-                        <div class="fantasy_team_box"></div>
-                    </div>
-                    <div class="fantasy_right_column">
-                        <div class="fantasy_chosen_player_box">
-                            <div class="chosen_boxes" data-index="1"></div>
-                            <div class="chosen_boxes" data-index="2"></div>
-                            <div class="chosen_boxes" data-index="3"></div>
-                            <div class="chosen_boxes" data-index="4"></div>
-                            <div class="chosen_boxes" data-index="5"></div>
-                        </div>
-                        <div class="fantasy_statistic_box">
-                            <table>
-                                <tr>
-                                    <th>Player</th>
-                                    <th>Team</th>
-                                    <th>Position</th>
-                                    <th>Price</th>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </section>
-            <!--==============footer-section================-->
-            <section class="footer_cont">
-                <div class="footer_content">
-                    <div class="footer_logo_box">
-                        <div>
-                            <a href="index.html">
-                                <img src="img/logo.png" alt="" />
-                            </a>
-                        </div>
-                        <p>
-                            Check daily statistics, matches and cheer on your
-                            favorite team only on our website
-                        </p>
-                    </div>
-                    <div class="footer_links_box">
-                        <ul>
-                            <h1>Services</h1>
-                            <li><a href="fantasy.html">Fantasy</a></li>
-                            <li><a href="#">My team</a></li>
-                            <li><a href="liderboard.html">Liderbard</a></li>
-                            <li><a href="#">Rules</a></li>
-                            <li><a href="games.html">Games</a></li>
-                            <li><a href="#">Prizes</a></li>
-                        </ul>
-                        <ul>
-                            <h1>Links</h1>
-                            <li>
-                                <a href="#"
-                                    ><i class="fa fa-youtube-play"></i
-                                ></a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    ><i class="fa-brands fa-facebook"></i
-                                ></a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    ><img src="img/insta_logo.png" alt="" />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer_message_box">
-                        <form action="" method="post">
-                            <div>
-                                <input type="text" placeholder=" Name" />
-                                <input type="email" placeholder=" Email" />
-                            </div>
-                            <textarea
-                                name=""
-                                id=""
-                                cols="30"
-                                rows="10"
-                                placeholder="Message..."
-                            ></textarea>
-                            <input type="submit" />
-                        </form>
-                    </div>
+                <div class="profile_right_box">
+                  <img src="img/user_img.jpg" alt="" />
                 </div>
-            </section>
+              </div>
+            </div>
+            <div class="register_box active">
+              <button id="reg_btn">Register</button>
+              <button id="login_btn">
+                <i class="fa-regular fa-user"></i> Log in
+              </button>
+            </div>
+            <div class="navbar_menu">
+              <span class="line1"></span>
+              <span class="line2"></span>
+              <span class="line3"></span>
+            </div>
+          </div>
         </div>
-        <!--==============POPUP-section================-->
-        <section class="popup_section reg_section">
-            <div class="popup_container">
-                <div class="reg_box">
-                    <div class="popup_header">
-                        <h1>Registration</h1>
-                        <i
-                            class="fa-regular fa-circle-xmark popUp_remove_btn"
-                        ></i>
-                    </div>
-                    <form action="" method="post">
-                        <input type="text" placeholder="Name" />
-                        <input type="text" placeholder="LastName" />
-                        <input type="text" placeholder="IngameName" />
-                        <input type="text" placeholder="Email" />
-                        <input type="text" placeholder="ID number" />
-                        <p>
-                            Can not register without<a href="#">ID card</a
-                            >number
-                        </p>
-                        <button type="submit">Continue</button>
-                    </form>
+        <ul class="responsive_nav">
+          <li><a href="fantasy.html">Fantasy</a></li>
+          <li><a href="#">My team</a></li>
+          <li><a href="liderboard.html">Liderboard</a></li>
+          <li><a href="#">Rules</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="#">Prizes</a></li>
+          <div>
+            <div class="user_resposive_account_box">
+              <div class="user_acount_content">
+                <div class="profile_right_box">
+                  <img src="img/user_img.jpg" alt="" />
                 </div>
-            </div>
-        </section>
-        <section class="popup_section log_section">
-            <div class="popup_container">
-                <div class="reg_box">
-                    <div class="popup_header">
-                        <h1>Login</h1>
-                        <i
-                            class="fa-regular fa-circle-xmark popUp_remove_btn"
-                        ></i>
+                <div class="profile_left_box">
+                  <div class="username_box">
+                    <h3>zzz077</h3>
+                    <i class="fa fa-angle-down"></i>
+                    <div class="exit_box">
+                      <p>Logout</p>
+                      <i class="fa fa-sign-out"></i>
                     </div>
-                    <form action="" method="post">
-                        <input type="text" placeholder="IngameName" />
-                        <input type="text" placeholder="Email" />
-                        <p id="dnt_have_acc_btn">
-                            Do not have account,<a href="#">Register</a>now!
-                        </p>
-                        <button type="submit">Continue</button>
-                    </form>
+                  </div>
+                  <div class="credit_box">
+                    <div>
+                      <p>Balance:</p>
+                      <p>45C</p>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
-        <!--==============loader-script================-->
+          </div>
+        </ul>
+      </nav>
+      <br />
+      <!--==============fantasy-section================-->
+      <section class="fantasy_sec">
+        <div class="fantasy_content">
+          <div class="fantasy_left_column">
+            <div class="fantasy_team_box"></div>
+          </div>
+          <div class="fantasy_right_column">
+            <div class="fantasy_chosen_player_box">
+              <div class="chosen_boxes" data-index="1"></div>
+              <div class="chosen_boxes" data-index="2"></div>
+              <div class="chosen_boxes" data-index="3"></div>
+              <div class="chosen_boxes" data-index="4"></div>
+              <div class="chosen_boxes" data-index="5"></div>
+            </div>
+            <div class="fantasy_statistic_box">
+              <table>
+                <tr>
+                  <th>Player</th>
+                  <th>Team</th>
+                  <th>Position</th>
+                  <th>Price</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--==============footer-section================-->
+      <section class="footer_cont">
+        <div class="footer_content">
+          <div class="footer_logo_box">
+            <div>
+              <a href="index.html">
+                <img src="img/logo.png" alt="" />
+              </a>
+            </div>
+            <p>
+              Check daily statistics, matches and cheer on your favorite team
+              only on our website
+            </p>
+          </div>
+          <div class="footer_links_box">
+            <ul>
+              <h1>Services</h1>
+              <li><a href="fantasy.html">Fantasy</a></li>
+              <li><a href="#">My team</a></li>
+              <li><a href="liderboard.html">Liderbard</a></li>
+              <li><a href="#">Rules</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="#">Prizes</a></li>
+            </ul>
+            <ul>
+              <h1>Links</h1>
+              <li>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><img src="img/insta_logo.png" alt="" /> </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer_message_box">
+            <form action="" method="post">
+              <div>
+                <input type="text" placeholder=" Name" />
+                <input type="email" placeholder=" Email" />
+              </div>
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Message..."
+              ></textarea>
+              <input type="submit" />
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--==============POPUP-section================-->
+    <section class="popup_section reg_section">
+      <div class="popup_container">
+        <div class="reg_box">
+          <div class="popup_header">
+            <h1>Registration</h1>
+            <i class="fa-regular fa-circle-xmark popUp_remove_btn"></i>
+          </div>
+          <form action="" method="post">
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="LastName" />
+            <input type="text" placeholder="IngameName" />
+            <input type="text" placeholder="Email" />
+            <input type="text" placeholder="ID number" />
+            <p>Can not register without<a href="#">ID card</a>number</p>
+            <button type="submit">Continue</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="popup_section log_section">
+      <div class="popup_container">
+        <div class="reg_box">
+          <div class="popup_header">
+            <h1>Login</h1>
+            <i class="fa-regular fa-circle-xmark popUp_remove_btn"></i>
+          </div>
+          <form action="" method="post">
+            <input type="text" placeholder="IngameName" />
+            <input type="text" placeholder="Email" />
+            <p id="dnt_have_acc_btn">
+              Do not have account,<a href="#">Register</a>now!
+            </p>
+            <button type="submit">Continue</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!--==============loader-script================-->
 
-        <script>
-            $(window).on("load", () => {
-                $(".loader").fadeOut(1000);
-                $(".content").fadeIn(1000);
-            });
-        </script>
-        <script type="module" src="app.js" defer></script>
-    </body>
+    <script>
+      $(window).on("load", () => {
+        $(".loader").fadeOut(1000);
+        $(".content").fadeIn(1000);
+      });
+    </script>
+    <script type="module" src="app.js" defer></script>
+  </body>
 </html>
